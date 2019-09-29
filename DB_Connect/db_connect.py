@@ -30,7 +30,7 @@ config_local_usertag = {
 
 # BI brand 数据库配置
 config_bi_brand = {
-    'host': '192.168.12.182',
+    'host': '***',
     'port': 3306,
     'user': 'yifan',
     'password': 'yifan',
@@ -41,7 +41,7 @@ config_bi_brand = {
 
 
 config_brand_pymysql = {
-    'host': '192.168.15.138',
+    'host': '***',
     'port': 3306,
     'user': 'yifan',
     'password': 'yifan',
@@ -59,7 +59,7 @@ config_brand_pymysql = {
 #
 #
 # def db_brand2():
-#     connstr = 'mysql+pymysql://yifan:yifan@192.168.12.182/brand?charset=utf8mb4'
+#     connstr = 'mysql+pymysql://yifan:yifan@***/brand?charset=utf8mb4'
 #     engine = create_engine(connstr, echo=True)
 #     return engine
 
@@ -97,7 +97,7 @@ def db_conn(schema_name):
 
 # crm_db 数据库配置
 crm_db = {
-    'host': '192.168.1.236',
+    'host': '***',
     'port': 3306,
     'user': 'tang',
     'password': 'wytec',
@@ -114,19 +114,19 @@ def db_crm():
 
 
 def db_crm2():
-    connstr = 'mysql+pymysql://tang:wytec@192.168.1.236/crm_db?charset=utf8'
+    connstr = 'mysql+pymysql://tang:wytec@***/crm_db?charset=utf8'
     engine = create_engine(connstr, echo=True)
     return engine
 
 
 def db_longyi():
-    connstr = 'mysql+pymysql://guest:05160824@192.168.13.95/ddmx?charset=utf8'
+    connstr = 'mysql+pymysql://guest:05160824@***/ddmx?charset=utf8'
     engine = create_engine(connstr, echo=True)
     return engine
 
 
 def db_brand():
-    connstr = 'mysql+pymysql://yifan:yifan@192.168.15.138/brand?charset=utf8'
+    connstr = 'mysql+pymysql://yifan:yifan@***/brand?charset=utf8'
     engine = create_engine(connstr, echo=True)
     return engine
 

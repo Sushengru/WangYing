@@ -62,4 +62,5 @@
 &emsp;&emsp;&emsp;a. 获取当前日期和清洗表的日期来判断来查询增量，而非全部数据；<br>
 &emsp;&emsp;&emsp;b. 增加数据统计表的生成，便于常规统计数据的使用和简化sql；<br>
 &emsp;&emsp;&emsp;c. 按步骤封装函数，以及按参数-执行的流程编写，提升代码简洁性；<br>
-&emsp;&emsp;&emsp;d. 丰富的注释；<br>
+&emsp;&emsp;&emsp;d. 表名等参数，按顺序定义在list里，简化代码；<br>
+&emsp;&emsp;&emsp;f. 丰富的注释；<br>
