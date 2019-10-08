@@ -18,7 +18,7 @@ Update:
 
 """
 
-from DB_Connect import db_connect
+from DB_Connection import connection_config
 # from triumph import triumph_sql
 import pandas as pd
 from pandas import DataFrame
@@ -80,7 +80,7 @@ def get_triumph(conn, oder_table_num, visitor, s_time, e_time):
 
     # 获取查询订单sql，查询返回DF
     sql_order = usage_sql.get_order(oder_table_num, visitor, s_time, e_time)
-    result = db_connect.query_sql(conn, sql_order)
+    result = connection_config.query_sql(conn, sql_order)
     df_order = DataFrame(result, columns=col)
 
     print(df_order.head(20))
@@ -151,7 +151,7 @@ def create_triumph(conn, triumph_name, product_name, stat_name, comment_list):
     # print(sql_create_stat)
     # 执行sql
     # db_connect.query_operation(conn, sql_create_stat)
-    db_connect.query_operation(conn, sql_create_triumph)
+    connection_config.query_operation(conn, sql_create_triumph)
 
 
 def stat_option(conn, triumph_name):
@@ -204,7 +204,7 @@ def update_id(conn, table_target, table_id):
     sql_update = usage_sql.update_buyer_id(table_target, table_id)
     print(sql_update)
     # 执行语句
-    db_connect.query_operation(conn, sql_update)
+    connection_config.query_operation(conn, sql_update)
 
 
 # 执行
@@ -231,9 +231,9 @@ if __name__ == '__main__':
     comment_list = ['triumph订单数据表', 'triumph会员统计表']
 
     # f. 连接数据库
-    db_crm = db_connect.db_crm()                 # 订单服务器库, py_mysql
-    create_con = db_connect.db_brand_pymysql()   # 本地数据库, py_mysql
-    tosql_con = db_connect.db_brand()            # 本地数据库, sql_alchemy
+    db_crm = connection_config.db_crm()                 # 订单服务器库, py_mysql
+    create_con = connection_config.db_brand_pymysql()   # 本地数据库, py_mysql
+    tosql_con = connection_config.db_brand()            # 本地数据库, sql_alchemy
 
     # g. 时间范围
     start_day = usage_method.order_last_day(tosql_con, triumph_table)
