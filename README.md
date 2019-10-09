@@ -53,9 +53,11 @@
   &emsp;&emsp;
   程序结构上分几个文件：<br>
 &emsp;&emsp;&emsp;`DB_Connect/db_connect.py` : 封装涉及到的数据库连接<br>
+&emsp;&emsp;&emsp;`Brand_Stat/brand_stat.py` : 封装清洗数据后生成统计数据的函数<br>
+&emsp;&emsp;&emsp;`Deal_Product/brand_product_sql.py` : 不同品牌的产品表sql语句<br>
 &emsp;&emsp;&emsp;`usage_method.py` : 所有品牌都要涉及的操作函数封装,如字段排序、获取当前日期<br>
 &emsp;&emsp;&emsp;`usage_sql.py` : 查询订单sql、建表sql的封装，用品牌名作为参数传入以区分<br>
-&emsp;&emsp;&emsp;`get_品牌名.py` : 执行文件。（不同品牌的清洗操作多少会有点不同，因此需要分开写）<br>
+&emsp;&emsp;&emsp;`Brand/brand_品牌名.py` : 执行文件。（不同品牌的清洗操作多少会有点不同，因此需要分开写）<br>
     
   &emsp;&emsp;
   另外，从性能或便利性或拓展性角度出发，做了几件事情：<br>
@@ -64,3 +66,17 @@
 &emsp;&emsp;&emsp;c. 按步骤封装函数，以及按参数-执行的流程编写，提升代码简洁性；<br>
 &emsp;&emsp;&emsp;d. 表名等参数，按顺序定义在list里，简化代码；<br>
 &emsp;&emsp;&emsp;f. 丰富的注释；<br>
+
+### 后续可拓展内容：
+
+  &emsp;&emsp;  1. 增加stat表的统计内容；<br>
+  &emsp;&emsp;  2. 在python中完成查询数据的内存占用优化，使数据占用更小；<br>
+  &emsp;&emsp;  3. 
+  
+  
+### 注：
+
+&emsp;&emsp;  1. 黛安芬的清洗代表着第一版，其他的清洗文件代表着第二版。第二版主要是我同事负责修改的；<br>
+&emsp;&emsp;  2. 同事的代码中，关于不同品牌的清洗、调用sql过程均是可以抽离封装起来的，这点没有处理好；<br>
+
+  
